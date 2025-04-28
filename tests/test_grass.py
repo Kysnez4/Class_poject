@@ -1,6 +1,6 @@
 import pytest
 
-from src.commerce import Product, Category
+from src.commerce import Category, Product
 from src.grass import LawnGrass
 from src.phone import Smartphone
 
@@ -12,8 +12,7 @@ def test_product_inheritance():
 
 def test_lawn_grass_creation():
     """Тест создания газонной травы"""
-    grass = LawnGrass("Газон", "Трава", 500, 10,
-                      "Россия", "14 дней", "Зеленый")
+    grass = LawnGrass("Газон", "Трава", 500, 10, "Россия", "14 дней", "Зеленый")
     assert grass.country == "Россия"
     assert isinstance(grass, Product)
 
@@ -45,7 +44,7 @@ def test_category_str_with_inherited():
     """Тест строкового представления с наследниками"""
     products = [
         Smartphone("Phone", "Desc", 1000, 2, "A1", "M1", "64GB", "Black"),
-        LawnGrass("Grass", "Desc", 500, 3, "RU", "10 дней", "Green")
+        LawnGrass("Grass", "Desc", 500, 3, "RU", "10 дней", "Green"),
     ]
     cat = Category("Тест", "Тест", products)
     assert str(cat) == "Тест, количество продуктов: 5 шт."
