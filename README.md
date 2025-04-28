@@ -122,4 +122,5 @@ categories.add_product(new_product)
 
 ```bash
 pytest tests
+pytest --cov=. --cov-report=html
 ```
